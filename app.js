@@ -6,6 +6,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.get('/', (req,res) => {
+    console.log('hello')
     res.sendFile(__dirname+'/test.html');
 })
 
