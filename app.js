@@ -6,12 +6,15 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.get('/', (req,res) => {
-    console.log('hi');
     res.sendFile(__dirname+'/test.html');
 })
 
 app.post('/', (req, res) => {
-
+    if(req.body.pass === '123'){
+        res.send({message: 'welcome '+req.body.login})
+    }else{
+        res.send({message: 'False'})
+    }
     res.sendFile(__dirname + '/test.html')
 })
 
